@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0a08">
+<title>AZ_KING.STORE | متجر الألعاب والخدمات الرقمية</title>
+<meta name="description" content="AZ_KING.STORE: حسابات ألعاب، خدمات تصميم، دورات تعليمية رقمية وحسابات Google Play بأسعار بالدينار الجزائري.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0a08'/%3E%3Cpath d='M10 46 14 20l12 14 6-18 6 18 12-14 4 26z' fill='%23e8b923'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0a08;--bg2:#14120e;--card:#1a1712;--line:#2c2618;--gold:#e8b923;--gold2:#f6d86b;--tx:#f5efe0;--mut:#a99f86;--ok:#3ddc84;--r:16px}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6;overflow-x:hidden}
+button{font:inherit;cursor:pointer;border:0;color:inherit}
+input,textarea,select{font:inherit;color:var(--tx)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1200px;margin:auto;padding:0 16px}
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(11,10,8,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:12px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.2rem;letter-spacing:.5px;direction:ltr}
+.logo svg{width:40px;height:40px}
+.logo b{color:var(--gold)}
+nav{margin-inline-start:auto;display:flex;gap:6px}
+nav a{padding:8px 14px;border-radius:99px;color:var(--mut);font-weight:600;transition:.25s}
+nav a:hover{color:var(--gold);background:var(--card)}
+.cartbtn{position:relative;background:var(--gold);color:#1a1405;width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:1.25rem;transition:transform .2s}
+.cartbtn:active{transform:scale(.92)}
+.cartbtn i{position:absolute;top:-6px;inset-inline-start:-6px;min-width:20px;height:20px;border-radius:10px;background:#fff;color:#000;font:800 .72rem/20px Cairo;text-align:center;font-style:normal;padding:0 4px}
+.menubtn{display:none;background:var(--card);width:46px;height:46px;border-radius:14px;font-size:1.3rem}
+/* hero */
+.hero{position:relative;padding:64px 0 48px;text-align:center;overflow:hidden;background:radial-gradient(ellipse at 50% 0,rgba(232,185,35,.18),transparent 60%)}
+.hero:before,.hero:after{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(232,185,35,.16),transparent 70%);animation:float 9s ease-in-out infinite}
+.hero:before{top:-120px;inset-inline-start:-80px}.hero:after{bottom:-160px;inset-inline-end:-80px;animation-delay:-4s}
+@keyframes float{50%{transform:translateY(30px) scale(1.1)}}
+.hero .crown{width:92px;margin:0 auto 14px;animation:rise 1s both}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+.hero h1{font-size:clamp(2rem,6.5vw,3.8rem);font-weight:900;line-height:1.25;position:relative;animation:rise 1s .15s both}
+.hero h1 span{background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold));background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 4s linear infinite;direction:ltr;display:inline-block}
+@keyframes shine{to{background-position:200% 0}}
+.hero p{color:var(--mut);max-width:560px;margin:12px auto 24px;font-size:1.05rem;animation:rise 1s .3s both}
+.cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;animation:rise 1s .45s both}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:14px;font-weight:800;min-height:48px;transition:.25s}
+.btn.gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a1405;box-shadow:0 8px 24px rgba(232,185,35,.25)}
+.btn.gold:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(232,185,35,.4)}
+.btn.ghost{background:var(--card);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--gold);color:var(--gold)}
+.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:36px}
+.trust div{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:14px;font-weight:600;font-size:.92rem}
+.trust span{display:block;font-size:1.5rem}
+/* tools */
+.tools{position:sticky;top:68px;z-index:40;background:var(--bg);padding:14px 0 10px}
+.search{position:relative}
+.search input{width:100%;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 46px 14px 16px;transition:.2s}
+.search input:focus{border-color:var(--gold);outline:0}
+.search:before{content:"🔍";position:absolute;inset-inline-start:auto;right:16px;top:50%;transform:translateY(-50%)}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:12px 0 2px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;background:var(--card);border:1px solid var(--line);padding:10px 18px;border-radius:99px;font-weight:700;transition:.25s;color:var(--mut)}
+.tab.on{background:var(--gold);color:#1a1405;border-color:var(--gold)}
+/* grid */
+.sec{padding:20px 0 8px}
+.sec h2{font-size:1.5rem;font-weight:900;margin:18px 0 14px;padding-inline-start:12px;border-inline-start:4px solid var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:.3s}
+.card:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 14px 34px rgba(0,0,0,.5)}
+.card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;background:var(--bg2)}
+.cb{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.cb h3{font-size:1.05rem;font-weight:800}
+.cb p{color:var(--mut);font-size:.88rem;flex:1}
+.row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.price{color:var(--gold2);font-weight:900;font-size:1.1rem}
+.price small{color:var(--mut);font-weight:600;font-size:.75rem}
+.stock{font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:99px;background:rgba(61,220,132,.12);color:var(--ok)}
+.stock.lim{background:rgba(232,185,35,.12);color:var(--gold)}
+.acts{display:grid;grid-template-columns:1.3fr 1fr;gap:8px;margin-top:4px}
+.acts .btn{padding:10px;font-size:.92rem;border-radius:12px}
+.empty{text-align:center;color:var(--mut);padding:48px 0;display:none}
+/* modal & drawer */
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:90;display:none;align-items:center;justify-content:center;padding:14px;backdrop-filter:blur(3px)}
+.ov.show{display:flex;animation:fade .25s}
+@keyframes fade{from{opacity:0}}
+.box{background:var(--bg2);border:1px solid var(--line);border-radius:20px;width:100%;max-width:520px;max-height:92vh;overflow:auto;animation:pop .3s}
+@keyframes pop{from{transform:translateY(24px) scale(.97);opacity:0}}
+.box img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.bd{padding:18px;display:flex;flex-direction:column;gap:12px}
+.x{position:sticky;top:0;float:left;margin:10px;z-index:2;background:rgba(0,0,0,.6);width:38px;height:38px;border-radius:50%;font-size:1.1rem}
+.drawer{justify-content:flex-start;align-items:stretch;padding:0}
+.drawer .box{max-width:420px;height:100%;max-height:none;border-radius:0;margin-inline-end:auto;display:flex;flex-direction:column;animation:slide .3s}
+@keyframes slide{from{transform:translateX(-100%)}}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid var(--line);font-weight:900;font-size:1.2rem}
+.dh button{background:var(--card);width:38px;height:38px;border-radius:50%}
+.items{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:10px}
+.it{display:grid;grid-template-columns:64px 1fr auto;gap:10px;align-items:center;background:var(--card);border-radius:14px;padding:8px}
+.it img{width:64px;height:64px;object-fit:cover;border-radius:10px}
+.it h4{font-size:.9rem}.it .price{font-size:.9rem}
+.qty{display:flex;align-items:center;gap:8px;margin-top:4px}
+.qty button{width:30px;height:30px;border-radius:9px;background:var(--bg);border:1px solid var(--line);font-weight:900}
+.del{background:rgba(255,80,80,.14);color:#ff6b6b;width:34px;height:34px;border-radius:10px}
+.df{padding:16px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.tot{display:flex;justify-content:space-between;font-weight:900;font-size:1.15rem}
+.note{color:var(--mut);font-size:.8rem}
+.f{display:flex;flex-direction:column;gap:5px}
+.f label{font-size:.85rem;font-weight:700;color:var(--mut)}
+.f input,.f textarea,.f select{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;width:100%}
+.f input:focus,.f textarea:focus,.f select:focus{border-color:var(--gold);outline:0}
+.sum{background:var(--card);border-radius:12px;padding:12px;font-size:.88rem;display:flex;flex-direction:column;gap:4px}
+/* footer */
+footer{margin-top:48px;background:var(--bg2);border-top:1px solid var(--line);padding:36px 0 90px}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+footer h4{color:var(--gold);margin-bottom:8px}
+footer li{list-style:none;margin:5px 0;color:var(--mut)}
+footer li a:hover{color:var(--gold)}
+.copy{text-align:center;color:var(--mut);margin-top:26px;font-size:.85rem;direction:ltr}
+.wa{position:fixed;bottom:18px;inset-inline-start:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;font-size:1.7rem;box-shadow:0 8px 24px rgba(37,211,102,.45);animation:pulse 2.4s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 14px rgba(37,211,102,0)}}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--gold);color:#1a1405;font-weight:800;padding:12px 22px;border-radius:99px;z-index:120;opacity:0;pointer-events:none;transition:.3s}
+.toast.show{opacity:1;transform:translateX(-50%)}
+@media(max-width:720px){
+ nav{display:none;position:absolute;top:68px;inset-inline:0;background:var(--bg);flex-direction:column;padding:12px 16px;border-bottom:1px solid var(--line)}
+ nav.open{display:flex}nav a{padding:14px;font-size:1.05rem}
+ .menubtn{display:block;margin-inline-start:auto}
+ .cartbtn{margin-inline-start:0}
+ .grid{grid-template-columns:1fr 1fr;gap:10px}
+ .cb{padding:10px}.cb h3{font-size:.92rem}.cb p{display:none}
+ .acts{grid-template-columns:1fr}
+ .price{font-size:.98rem}
+ .hero{padding:44px 0 32px}
+}
+@media(max-width:380px){.grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="wrap bar">
+  <a href="#top" class="logo" aria-label="AZ_KING.STORE">
+   <svg viewBox="0 0 64 64"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6d86b"/><stop offset="1" stop-color="#b8860b"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="#14120e" stroke="#e8b923" stroke-width="2"/><path d="M12 44 15 21l11 13 6-17 6 17 11-13 3 23z" fill="url(#lg)"/><rect x="12" y="46" width="40" height="5" rx="2" fill="url(#lg)"/></svg>
+   <span>AZ_KING<b>.STORE</b></span>
+  </a>
+  <nav id="nav">
+   <a href="#products" data-cat="all">المنتجات</a>
+   <a href="#products" data-cat="games">الألعاب</a>
+   <a href="#products" data-cat="services">الخدمات</a>
+   <a href="#products" data-cat="edu">التعليم</a>
+   <a href="#contact">تواصل معنا</a>
+  </nav>
+  <button class="menubtn" id="menuBtn" aria-label="القائمة">☰</button>
+  <button class="cartbtn" id="cartBtn" aria-label="السلة">🛒<i id="cnt">0</i></button>
+ </div>
+</header>
+
+<section class="hero" id="top">
+ <div class="wrap">
+  <svg class="crown" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#14120e" stroke="#e8b923" stroke-width="2"/><path d="M12 44 15 21l11 13 6-17 6 17 11-13 3 23z" fill="url(#lg)"/><rect x="12" y="46" width="40" height="5" rx="2" fill="url(#lg)"/></svg>
+  <h1>مرحبًا بك في <span>AZ_KING.STORE</span><br>متجرك للألعاب والخدمات الرقمية</h1>
+  <p>حسابات ألعاب، خدمات تصميم وبرمجة، ودورات تعليمية بأسعار بالدينار الجزائري. اطلب عبر واتساب في دقائق.</p>
+  <div class="cta">
+   <a class="btn gold" href="#products">تصفح المنتجات</a>
+   <a class="btn ghost" href="#" id="heroWa">تواصل عبر واتساب</a>
+  </div>
+  <div class="trust">
+   <div><span>⚡</span>تسليم سريع</div>
+   <div><span>🛡️</span>خدمة موثوقة</div>
+   <div><span>💬</span>دعم عبر واتساب</div>
+   <div><span>🇩🇿</span>الدفع بالدينار الجزائري</div>
+  </div>
+ </div>
+</section>
+
+<main class="wrap" id="products">
+ <div class="tools">
+  <div class="search"><input id="q" type="search" placeholder="ابحث عن منتج أو خدمة..." aria-label="بحث"></div>
+  <div class="tabs" id="tabs"></div>
+ </div>
+ <div id="list"></div>
+ <div class="empty" id="empty">لا توجد نتائج مطابقة. جرّب كلمة بحث أخرى أو اختر "الكل".</div>
+</main>
+
+<footer id="contact">
+ <div class="wrap">
+  <div class="fg">
+   <div><div class="logo"><span>AZ_KING<b>.STORE</b></span></div><p class="note" style="margin-top:8px">متجرك الرقمي الموثوق في الجزائر: ألعاب، خدمات، وتعليم.</p></div>
+   <div><h4>الأقسام</h4><ul><li><a href="#products" data-cat="games">الألعاب</a></li><li><a href="#products" data-cat="services">الخدمات الرقمية</a></li><li><a href="#products" data-cat="edu">التعليم الرقمي</a></li><li><a href="#products" data-cat="accounts">الحسابات الرقمية</a></li></ul></div>
+   <div><h4>تواصل مع صاحب المتجر</h4><ul><li><a href="#" id="footWa">💬 واتساب</a></li><li>🕒 نرد على طلباتك يوميًا</li></ul></div>
+  </div>
+  <div class="copy">© <span id="yr"></span> AZ_KING.STORE — All rights reserved</div>
+ </div>
+</footer>
+
+<a class="wa" href="#" id="floatWa" aria-label="واتساب">💬</a>
+
+<!-- product modal -->
+<div class="ov" id="pm"><div class="box" id="pbox"></div></div>
+
+<!-- cart drawer -->
+<div class="ov drawer" id="cm">
+ <div class="box">
+  <div class="dh"><span>🛒 سلة المشتريات</span><button id="cClose" aria-label="إغلاق">✕</button></div>
+  <div class="items" id="items"></div>
+  <div class="df" id="cf">
+   <div class="tot"><span>المجموع</span><span id="total">0 دج</span></div>
+   <div class="note" id="fromNote" style="display:none">منتجات "ابتداءً من" يؤكَّد سعرها النهائي عند التواصل.</div>
+   <button class="btn gold" id="goCheckout">إتمام الطلب</button>
+   <button class="btn ghost" id="clear">إفراغ السلة</button>
+  </div>
+ </div>
+</div>
+
+<!-- checkout -->
+<div class="ov" id="ck">
+ <div class="box">
+  <div class="dh"><span>📦 إتمام الطلب</span><button id="kClose" aria-label="إغلاق">✕</button></div>
+  <div class="bd">
+   <div class="sum" id="sum"></div>
+   <div class="f"><label for="nm">الاسم الكامل *</label><input id="nm" autocomplete="name"></div>
+   <div class="f"><label for="ph">رقم الهاتف *</label><input id="ph" type="tel" inputmode="tel" autocomplete="tel" placeholder="05XXXXXXXX"></div>
+   <div class="f"><label for="wl">الولاية</label><input id="wl" placeholder="مثال: الجزائر"></div>
+   <div class="f"><label for="nt">ملاحظات (معرّف اللعبة، تفاصيل الخدمة...)</label><textarea id="nt" rows="3"></textarea></div>
+   <button class="btn gold" id="send">إرسال الطلب عبر واتساب</button>
+  </div>
+ </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============ إعدادات المتجر: عدّل من هنا ============ */
+const STORE = "AZ_KING.STORE";
+const WHATSAPP = "213552411377"; // ← ضع رقمك بصيغة دولية بدون + أو أصفار (مثال الجزائر: 2135XXXXXXXX)
+const CURRENCY = "دج";
+
+const CATEGORIES = [
+  {id:"games",    name:"🎮 الألعاب"},
+  {id:"services", name:"🛠️ الخدمات الرقمية"},
+  {id:"edu",      name:"📚 التعليم الرقمي"},
+  {id:"accounts", name:"👤 الحسابات الرقمية"}
+];
+
+/* price: رقم أو null (حسب الطلب) | from: true يعني "ابتداءً من" | fixed: سعر ثابت لا يُغيَّر
+   stock: "متوفر" أو "كمية محدودة" | icon/c1/c2: رمز ولونا صورة المنتج */
+const PRODUCTS = [
+  {id:1, cat:"games", name:"حسابات Free Fire", desc:"حسابات جاهزة بمستويات وعناصر متنوعة، مع تسليم سريع ودعم بعد الشراء.", price:500, from:true, stock:"متوفر", icon:"🔥", c1:"#ff7a18", c2:"#7a1d00"},
+  {id:2, cat:"games", name:"حسابات PUBG Mobile", desc:"حسابات بيانات ورتب مختلفة، مناسبة لكل المستويات مع ضمان بيانات الدخول.", price:700, from:true, stock:"متوفر", icon:"🎯", c1:"#f2c94c", c2:"#3a2f00"},
+  {id:3, cat:"games", name:"حسابات PES / eFootball", desc:"حسابات بتشكيلات ولاعبين مميزين لتبدأ اللعب بقوة من أول مباراة.", price:500, from:true, stock:"كمية محدودة", icon:"⚽", c1:"#2ecc71", c2:"#053b1e"},
+  {id:4, cat:"games", name:"بطاقات الألعاب", desc:"بطاقات شحن لأشهر الألعاب والمنصات. السعر يحدَّد حسب القيمة المطلوبة.", price:null, stock:"متوفر", icon:"💳", c1:"#9b59ff", c2:"#240a4d"},
+  {id:5, cat:"services", name:"تصميم صفحة هبوط احترافية", desc:"صفحة هبوط عصرية متجاوبة مع الهاتف، مصممة لزيادة التحويل والمبيعات.", price:1500, fixed:true, stock:"متوفر", icon:"🚀", c1:"#e8b923", c2:"#2a1f00"},
+  {id:6, cat:"services", name:"تصميم وإنشاء المواقع الإلكترونية", desc:"مواقع كاملة بتصميم احترافي وسرعة عالية، من الفكرة حتى النشر.", price:3000, from:true, stock:"متوفر", icon:"🌐", c1:"#2d9cdb", c2:"#06203a"},
+  {id:7, cat:"services", name:"تصميم شعارات احترافية", desc:"شعار فريد يعبّر عن هويتك، مع ملفات جاهزة للاستخدام.", price:500, from:true, stock:"متوفر", icon:"✒️", c1:"#eb5757", c2:"#3a0b0b"},
+  {id:8, cat:"services", name:"تصميم صور إعلانية", desc:"تصاميم إعلانية جذابة لمنصات التواصل تلفت الانتباه وتزيد التفاعل.", price:300, from:true, stock:"متوفر", icon:"🖼️", c1:"#f2994a", c2:"#3a1d00"},
+  {id:9, cat:"services", name:"مونتاج وتحرير الفيديوهات", desc:"مونتاج احترافي بمؤثرات وانتقالات سلسة لفيديوهاتك ومقاطعك.", price:500, from:true, stock:"متوفر", icon:"🎬", c1:"#bb6bd9", c2:"#2a0a3a"},
+  {id:10, cat:"edu", name:"كتاب العلوم للسنة الرابعة متوسط PDF", desc:"كتاب العلوم بصيغة PDF واضحة، جاهز للتحميل والمراجعة في أي وقت.", price:800, fixed:true, stock:"متوفر", icon:"🔬", c1:"#27ae60", c2:"#052a14"},
+  {id:11, cat:"edu", name:"دورة تعلم HTML وCSS", desc:"ابدأ من الصفر وتعلم بناء وتنسيق صفحات الويب خطوة بخطوة.", price:500, stock:"متوفر", icon:"🧱", c1:"#e44d26", c2:"#3a1004"},
+  {id:12, cat:"edu", name:"دورة تعلم JavaScript", desc:"تعلم برمجة التفاعل في المواقع مع تطبيقات عملية ومشاريع.", price:700, stock:"متوفر", icon:"⚡", c1:"#f7df1e", c2:"#3a3300"},
+  {id:13, cat:"edu", name:"دورة تعلم Termux", desc:"تعلم استخدام سطر الأوامر على أندرويد وأساسيات لينكس بشكل عملي.", price:500, stock:"متوفر", icon:"💻", c1:"#3ddc84", c2:"#04210f"},
+  {id:14, cat:"edu", name:"دورة الأمن السيبراني للمبتدئين", desc:"مفاهيم حماية الحسابات والبيانات وأساسيات الأمن الرقمي للمبتدئين.", price:700, stock:"متوفر", icon:"🛡️", c1:"#56ccf2", c2:"#06283a", },
+  {id:15, cat:"edu", name:"دورة تعلم إنشاء المواقع الإلكترونية", desc:"دورة شاملة لبناء موقع كامل ونشره على الإنترنت من البداية للنهاية.", price:1000, stock:"متوفر", icon:"🎓", c1:"#e8b923", c2:"#332500"},
+  {id:16, cat:"accounts", name:"حسابات Google Play", desc:"حسابات Google Play جاهزة. السعر حسب النوع والتوفر، تواصل معنا للتفاصيل.", price:null, stock:"كمية محدودة", icon:"▶️", c1:"#34a853", c2:"#07260f"}
+];
+/* ======================================================= */
+
+const $ = s => document.querySelector(s);
+const fmt = n => n.toLocaleString("en-US") + " " + CURRENCY;
+const waLink = t => "https://wa.me/" + WHATSAPP + (t ? "?text=" + encodeURIComponent(t) : "");
+
+/* صور المنتجات: SVG مولّد داخليًا (يعمل بدون إنترنت وسريع) */
+function img(p){
+  const s = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${p.c1}"/><stop offset="1" stop-color="${p.c2}"/></linearGradient><radialGradient id="r" cx=".5" cy=".4" r=".6"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs><rect width="400" height="250" fill="url(#g)"/><rect width="400" height="250" fill="url(#r)"/><circle cx="340" cy="30" r="80" fill="#fff" opacity=".07"/><circle cx="50" cy="230" r="90" fill="#000" opacity=".15"/><text x="200" y="145" font-size="96" text-anchor="middle">${p.icon}</text><text x="200" y="228" font-size="15" font-weight="700" fill="#fff" opacity=".8" text-anchor="middle" font-family="sans-serif">AZ_KING.STORE</text></svg>`;
+  return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(s);
+}
+function priceHTML(p){
+  if(p.price == null) return `<span class="price">حسب الطلب</span>`;
+  return `<span class="price">${p.from ? "<small>ابتداءً من</small> " : ""}${fmt(p.price)}</span>`;
+}
+function stockHTML(p){ return `<span class="stock ${p.stock==="متوفر"?"":"lim"}">${p.stock==="متوفر"?"● متوفر":"● "+p.stock}</span>`; }
+
+/* ---------- الحالة ---------- */
+let cat = "all", query = "";
+let cart = {};
+try{ cart = JSON.parse(localStorage.getItem("azk_cart")||"{}"); }catch(e){}
+const save = () => { try{ localStorage.setItem("azk_cart", JSON.stringify(cart)); }catch(e){} };
+const byId = id => PRODUCTS.find(p => p.id == id);
+
+/* ---------- العرض ---------- */
+function renderTabs(){
+  const all = [{id:"all",name:"✨ الكل"}, ...CATEGORIES];
+  $("#tabs").innerHTML = all.map(c => `<button class="tab ${cat===c.id?"on":""}" data-c="${c.id}">${c.name}</button>`).join("");
+}
+function card(p){
+  return `<article class="card"><img loading="lazy" src="${img(p)}" alt="${p.name}">
+  <div class="cb"><div class="row">${stockHTML(p)}</div><h3>${p.name}</h3><p>${p.desc}</p>
+  <div class="row">${priceHTML(p)}</div>
+  <div class="acts"><button class="btn gold" data-order="${p.id}">اطلب الآن</button><button class="btn ghost" data-info="${p.id}">تفاصيل</button></div></div></article>`;
+}
+function renderList(){
+  const q = query.trim().toLowerCase();
+  const items = PRODUCTS.filter(p => (cat==="all"||p.cat===cat) && (!q || (p.name+" "+p.desc).toLowerCase().includes(q)));
+  let html = "";
+  CATEGORIES.forEach(c => {
+    const g = items.filter(p => p.cat===c.id);
+    if(g.length) html += `<section class="sec"><h2>${c.name}</h2><div class="grid">${g.map(card).join("")}</div></section>`;
+  });
+  $("#list").innerHTML = html;
+  $("#empty").style.display = items.length ? "none" : "block";
+}
+
+/* ---------- تفاصيل المنتج ---------- */
+function openInfo(id){
+  const p = byId(id);
+  $("#pbox").innerHTML = `<button class="x" data-close="pm" aria-label="إغلاق">✕</button><img src="${img(p)}" alt="${p.name}">
+  <div class="bd"><div class="row">${stockHTML(p)}${priceHTML(p)}</div><h3 style="font-size:1.3rem">${p.name}</h3><p style="color:var(--mut)">${p.desc}</p>
+  <p class="note">${p.fixed?"السعر ثابت.":p.from?"السعر يبدأ من القيمة المذكورة ويختلف حسب المواصفات المطلوبة.":p.price==null?"السعر يحدَّد حسب طلبك.":""} التسليم والدفع يتمان بالتنسيق معنا عبر واتساب.</p>
+  <button class="btn gold" data-order="${p.id}">${p.price==null?"اسأل عن السعر":"اطلب الآن"}</button>
+  ${p.price!=null?`<button class="btn ghost" data-add="${p.id}">🛒 أضف إلى السلة</button>`:""}</div>`;
+  show("pm");
+}
+
+/* ---------- السلة ---------- */
+function add(id){ cart[id] = (cart[id]||0) + 1; save(); renderCart(); toast("تمت الإضافة إلى السلة ✓"); }
+function orderNow(id){
+  const p = byId(id);
+  if(p.price == null){ // منتج بسعر حسب الطلب: استفسار مباشر
+    location.href = waLink(`مرحبًا ${STORE}، أرغب في الاستفسار عن: ${p.name}`); return;
+  }
+  add(id); hide("pm"); show("cm");
+}
+function renderCart(){
+  const ids = Object.keys(cart);
+  $("#cnt").textContent = ids.reduce((s,i)=>s+cart[i],0);
+  if(!ids.length){
+    $("#items").innerHTML = `<div class="empty" style="display:block">سلتك فارغة. أضف منتجًا للبدء.</div>`;
+    $("#cf").style.display = "none"; return;
+  }
+  $("#cf").style.display = "flex";
+  let total = 0, hasFrom = false;
+  $("#items").innerHTML = ids.map(i => {
+    const p = byId(i), q = cart[i]; total += p.price*q; if(p.from) hasFrom = true;
+    return `<div class="it"><img src="${img(p)}" alt=""><div><h4>${p.name}</h4><span class="price">${p.from?"من ":""}${fmt(p.price*q)}</span>
+    <div class="qty"><button data-dec="${i}" aria-label="إنقاص">−</button><b>${q}</b><button data-inc="${i}" aria-label="زيادة">+</button></div></div>
+    <button class="del" data-del="${i}" aria-label="حذف">🗑</button></div>`;
+  }).join("");
+  $("#total").textContent = fmt(total);
+  $("#fromNote").style.display = hasFrom ? "block" : "none";
+}
+function change(id, d){ cart[id] = (cart[id]||0) + d; if(cart[id] <= 0) delete cart[id]; save(); renderCart(); }
+
+/* ---------- إتمام الطلب ---------- */
+function openCheckout(){
+  const ids = Object.keys(cart); if(!ids.length) return;
+  let total = 0;
+  $("#sum").innerHTML = ids.map(i => { const p = byId(i); total += p.price*cart[i]; return `<div class="row"><span>${p.name} × ${cart[i]}</span><span>${fmt(p.price*cart[i])}</span></div>`; }).join("")
+   + `<div class="row tot" style="margin-top:6px"><span>المجموع</span><span>${fmt(total)}</span></div>`;
+  hide("cm"); show("ck");
+}
+function sendOrder(){
+  const nm = $("#nm").value.trim(), ph = $("#ph").value.trim();
+  if(nm.length < 2) return toast("أدخل اسمك الكامل"), $("#nm").focus();
+  if(!/^[0-9+\s]{8,15}$/.test(ph)) return toast("أدخل رقم هاتف صحيحًا"), $("#ph").focus();
+  let total = 0;
+  const lines = Object.keys(cart).map(i => { const p = byId(i); total += p.price*cart[i];
+    return `• ${p.name} × ${cart[i]} = ${p.from?"ابتداءً من ":""}${fmt(p.price*cart[i])}`; });
+  const msg = `🛒 طلب جديد من ${STORE}\n\n${lines.join("\n")}\n\n💰 المجموع: ${fmt(total)}\n\n👤 الاسم: ${nm}\n📞 الهاتف: ${ph}\n📍 الولاية: ${$("#wl").value.trim()||"-"}\n📝 ملاحظات: ${$("#nt").value.trim()||"-"}`;
+  window.open(waLink(msg), "_blank");
+}
+
+/* ---------- أدوات ---------- */
+function show(id){ document.getElementById(id).classList.add("show"); document.body.style.overflow = "hidden"; }
+function hide(id){ document.getElementById(id).classList.remove("show"); if(!document.querySelector(".ov.show")) document.body.style.overflow = ""; }
+let tt; function toast(m){ const t=$("#toast"); t.textContent=m; t.classList.add("show"); clearTimeout(tt); tt=setTimeout(()=>t.classList.remove("show"),1800); }
+function setCat(c){ cat = c; renderTabs(); renderList(); }
+
+/* ---------- الأحداث ---------- */
+document.addEventListener("click", e => {
+  const t = e.target.closest("[data-c],[data-cat],[data-order],[data-info],[data-add],[data-inc],[data-dec],[data-del],[data-close]");
+  if(e.target.classList.contains("ov")) hide(e.target.id);
+  if(!t) return;
+  const d = t.dataset;
+  if(d.c) setCat(d.c);
+  else if(d.cat){ setCat(d.cat); $("#nav").classList.remove("open"); }
+  else if(d.order) orderNow(+d.order);
+  else if(d.info) openInfo(+d.info);
+  else if(d.add) add(+d.add);
+  else if(d.inc) change(d.inc, 1);
+  else if(d.dec) change(d.dec, -1);
+  else if(d.del) change(d.del, -cart[d.del]);
+  else if(d.close) hide(d.close);
+});
+$("#q").addEventListener("input", e => { query = e.target.value; renderList(); });
+$("#cartBtn").onclick = () => show("cm");
+$("#cClose").onclick = () => hide("cm");
+$("#kClose").onclick = () => hide("ck");
+$("#goCheckout").onclick = openCheckout;
+$("#send").onclick = sendOrder;
+$("#clear").onclick = () => { cart = {}; save(); renderCart(); };
+$("#menuBtn").onclick = () => $("#nav").classList.toggle("open");
+document.querySelectorAll("#nav a:not([data-cat])").forEach(a => a.onclick = () => $("#nav").classList.remove("open"));
+["heroWa","footWa","floatWa"].forEach(id => { const a = document.getElementById(id); a.href = waLink(`مرحبًا ${STORE}، أرغب في الاستفسار.`); a.target = "_blank"; a.rel = "noopener"; });
+document.addEventListener("keydown", e => { if(e.key==="Escape") document.querySelectorAll(".ov.show").forEach(o => hide(o.id)); });
+$("#yr").textContent = new Date().getFullYear();
+
+/* تنظيف سلة قديمة من منتجات محذوفة */
+Object.keys(cart).forEach(i => { if(!byId(i) || byId(i).price==null) delete cart[i]; });
+renderTabs(); renderList(); renderCart();
+</script>
+</body>
+</html>
